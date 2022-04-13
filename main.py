@@ -15,6 +15,7 @@ MORSE_TO_TEXT_DICT = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E',
 
 
 def text_to_morse():
+    """Translates normal text to morse code."""
     user_input = input('Type the message to be converted to Morse Code.\n').upper()
     converted_text = ""
     for char in user_input:
@@ -27,10 +28,11 @@ def text_to_morse():
 
 
 def morse_to_text():
+    """Translate morse code to normal text"""
     user_input = input('Type the message to be converted to Text.\n'
-                       'Use "|" to separate each character.\n')
+                       'Use space to separate each character and "|" to separate each word.\n')
+    # Splits the user input into characters
     input_list = user_input.split(" ")
-    # return input_list
     converted_text = ""
     for char in input_list:
         if char == " ":
